@@ -1,1 +1,1 @@
-# g-commit-checker
+# googler-js
