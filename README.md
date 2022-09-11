@@ -10,13 +10,19 @@ npm install googler-js
 ### 1. Enable Google Calendar API on GCP.
 Login GCP > [APIs & Services] > [Enabled APIs & services]
 
+https://cloud.google.com/endpoints/docs/openapi/enable-api
+
 ### 2. Configure OAuth consent screen.
 [APIs & Services] > [OAuth consent screen]
+
+https://support.google.com/workspacemigrate/answer/9222992?hl=ja
 
 ### 3. Create Service account.
 [APIs & Services] > [Credentials] > [CREATE CREDENTIALS] > [Service account]
 
 And then download credential json file.
+
+https://cloud.google.com/docs/authentication/production?hl=ja#create_service_account
 
 ### 4. Share your Google Calendar to service account.
 Select calendar you want to share to the service account, add people in [Share with specific people].
