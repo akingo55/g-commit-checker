@@ -7,23 +7,23 @@ npm install googler-js
 ```
 
 ## Setup
-1. Enable Google Calendar API on GCP.
+### 1. Enable Google Calendar API on GCP.
 Login GCP > [APIs & Services] > [Enabled APIs & services]
 
-2. Configure OAuth consent screen.
+### 2. Configure OAuth consent screen.
 [APIs & Services] > [OAuth consent screen]
 
-3. Create Service account.
+### 3. Create Service account.
 [APIs & Services] > [Credentials] > [CREATE CREDENTIALS] > [Service account]
 
 And then download credential json file.
 
-4. Share your Google Calendar to service account.
+### 4. Share your Google Calendar to service account.
 Select calendar you want to share to the service account, add people in [Share with specific people].
 
 And then enter the email address of service account and select permissions (choice [Make changes to events]).
 
-5. Set environment variables.
+### 5. Set environment variables.
 Copy env file.
 ```bash
 cp .env.sample .env
