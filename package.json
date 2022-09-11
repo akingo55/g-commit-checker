@@ -7,7 +7,7 @@
     "test": "standard && node *.js"
   },
   "bin": {
-    "googler": "./cli.js"
+    "googler-js": "./cli.js"
   },
   "repository": {
     "type": "git",
