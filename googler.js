@@ -19,7 +19,7 @@ class Googler {
     const questions = [
       {
         type: 'input',
-        name: 'summary',
+        name: 'title',
         message: 'Enter the schedule summary:'
       },
       {
@@ -51,11 +51,11 @@ class Googler {
     ]
 
     prompt(questions)
-      .then(answers => {
-        const startTime = dayjs(answers.start).toDate()
-        const endTime = dayjs(answers.end).toDate()
+      .then(({ title, start, end }) => {
+        const startTime = dayjs(start).toDate()
+        const endTime = dayjs(end).toDate()
         const event = {
-          summary: answers.summary,
+          summary: title,
           start: {
             dateTime: startTime,
             timeZone: this.timezone
