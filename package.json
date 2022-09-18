@@ -1,6 +1,6 @@
 {
-  "name": "googler",
-  "version": "1.0.0",
+  "name": "googler-js",
+  "version": "1.0.1",
   "description": "create, delete, edit, display events in  your google calendar on terminal.",
   "main": "./cli.js",
   "scripts": {

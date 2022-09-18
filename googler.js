@@ -51,11 +51,11 @@ class Googler {
     ]
 
     prompt(questions)
-      .then(answers => {
-        const startTime = dayjs(answers.start).toDate()
-        const endTime = dayjs(answers.end).toDate()
+      .then(({ summary, start, end }) => {
+        const startTime = dayjs(start).toDate()
+        const endTime = dayjs(end).toDate()
         const event = {
-          summary: answers.summary,
+          summary,
           start: {
             dateTime: startTime,
             timeZone: this.timezone
@@ -123,21 +123,21 @@ class Googler {
     ]
 
     prompt(questions)
-      .then(answers => {
-        const event = calendar.events.get({ auth: authentication, calendarId: this.calenderId, eventId: answers.eventId })
+      .then(({ eventId, summary, start, end }) => {
+        const event = calendar.events.get({ auth: authentication, calendarId: this.calenderId, eventId })
 
-        if (answers.summary !== 'undefined') {
-          event.summary = answers.summary
-        } else if (answers.start !== 'undefined') {
-          event.start.dateTime = dayjs(answers.start).toDate()
-        } else if (answers.end !== 'undefined') {
-          event.end.dateTime = dayjs(answers.end).toDate()
+        if (summary !== 'undefined') {
+          event.summary = summary
+        } else if (start !== 'undefined') {
+          event.start.dateTime = dayjs(start).toDate()
+        } else if (end !== 'undefined') {
+          event.end.dateTime = dayjs(end).toDate()
         }
 
         calendar.events.patch({
           auth: authentication,
           calendarId: this.calenderId,
-          eventId: answers.eventId,
+          eventId,
           resource: event
         }, function (err, event) {
           if (err) {
